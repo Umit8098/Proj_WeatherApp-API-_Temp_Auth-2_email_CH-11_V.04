@@ -41,7 +41,12 @@
                             <img src="http://openweathermap.org/img/wn/{{i.icon}}@2x.png" alt=""> <br>
                             {{i.desc}} <br>
                             <a href="{% url 'weatherapp:delete' i.city.id %}" class="btn btn-danger btn-sm text-white text-decoration-none mt-2">Delete</a>
-                            <br>Kullanıcı : {{i.user}} <br>
+                            <br>
+                            Kullanıcı : 
+                            {% for user in i.city.user.all %}
+                                {{ user.username }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %} 
+                            <br>
                         </div>
                     </div>
                 </div>

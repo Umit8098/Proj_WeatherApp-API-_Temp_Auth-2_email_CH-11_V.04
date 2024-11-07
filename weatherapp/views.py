@@ -1,102 +1,82 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from decouple import config
 import requests
-from pprint import pprint
 from django.contrib import messages
 from .models import City
-#! profile_pic. için
 from users.models import UserProfile
 
-# Create your views here.
-def index(request):
-    
-    API_KEY = config('API_KEY')
-    city = 'Yozgat'
-        
-    u_city = request.POST.get('name')
-    user = request.user
-    print(user)
-    
-    # eğer kullanıcı şehir ismi girdiyse;
-    if u_city:
-        url = f'https://api.openweathermap.org/data/2.5/weather?q={u_city}&lang=tr&appid={API_KEY}&units=metric' # &lang=tr ile türkçe yapılıyor.
+# Hava durumu verilerini almak için yardımcı fonksiyon
+def get_weather_data(city_name, api_key):
+    url = f'https://api.openweathermap.org/data/2.5/weather?q={city_name}&lang=tr&appid={api_key}&units=metric'
+    try:
         response = requests.get(url)
-        # print(response.ok)
-        
-        if response.ok:
-            content = response.json()
-            r_city = content['name']
-            if City.objects.filter(name=r_city):
-                messages.warning(request, 'City already exist!')
-            else:
-                City.objects.create(name=r_city, user=user)
-        
-        else:
-            messages.warning(request, 'There is no city')
+        response.raise_for_status()
+        content = response.json()
+        return {
+            'city': city_name,
+            'temp': content['main']['temp'],
+            'icon': content['weather'][0]['icon'],
+            'desc': content['weather'][0]['description'],
+        }
+    except requests.exceptions.RequestException:
+        return None
 
+# Yeni bir şehir eklemek için kullanıcıya özel kontrol yapan fonksiyon
+def add_city(city_name, user):
+    # Yalnızca bu kullanıcıya ait şehirlerin isimlerini kontrol ediyoruz
+    user_cities = City.objects.filter(name=city_name, user=user)
+    if user_cities.exists():
+        return False
+    new_city = City.objects.create(name=city_name)
+    new_city.user.add(user)
+    return True
 
-    profile = None #! profile_pic. için
+# Ana görünüm
+def index(request):
+    API_KEY = config('API_KEY')
+    user = request.user
     city_data = []
-    if request.user.is_authenticated:
-        if request.user.is_superuser:
-            profile = UserProfile.objects.get(user=request.user)
-            cities = City.objects.all().order_by('-id')
-            for city in cities:
-                url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&lang=tr&appid={API_KEY}&units=metric' # &lang=tr ile türkçe yapılıyor.
-                response = requests.get(url)
-                content = response.json()
-                user=city.user
-                data = {
-                    # 'city': content['name'],
-                    'city': city, # 1. yol for'daki city objesi
-                    'temp': content['main']['temp'],
-                    'icon': content['weather'][0]['icon'],
-                    'desc': content['weather'][0]['description'],
-                    'user': user,
-                    # 'id': city.id, # 2. yol for'daki city objesi'nin id'si
-                }
-                city_data.append(data)
-                # 1. yol;
-                # print(city.id)
-                # print(city.id)
-            
-            # pprint(city_data)
+    profile = None
+    
+    # Kullanıcıya ait profilin var olup olmadığını kontrol etme
+    if user.is_authenticated:
+        profile, created = UserProfile.objects.get_or_create(user=user)
+
+    # Yeni şehir ekleme işlemi
+    u_city = request.POST.get('name')
+    if u_city:
+        if get_weather_data(u_city, API_KEY):
+            if add_city(u_city, user):
+                messages.success(request, 'Şehir eklendi.')
+            else:
+                messages.warning(request, 'Bu şehir zaten listenizde mevcut!')
         else:
-            profile = UserProfile.objects.get(user=request.user)
-            # cities = City.objects.all().order_by('name')
-            cities = City.objects.filter(user=request.user).order_by('-id')
-            for city in cities:
-                url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&lang=tr&appid={API_KEY}&units=metric' # &lang=tr ile türkçe yapılıyor.
-                response = requests.get(url)
-                content = response.json()
-                data = {
-                    # 'city': content['name'],
-                    'city': city, # 1. yol for'daki city objesi
-                    'temp': content['main']['temp'],
-                    'icon': content['weather'][0]['icon'],
-                    'desc': content['weather'][0]['description'],
-                    # 'id': city.id, # 2. yol for'daki city objesi'nin id'si
-                }
-                city_data.append(data)
-                # 1. yol;
-                # print(city.id)
-                # print(city.id)
-            
-            # pprint(city_data)
-    else:
-        city_data, profile
+            messages.warning(request, 'Böyle bir şehir bulunamadı.')
+
+    # Superuser için tüm şehirleri gösterme, diğer kullanıcılar için yalnızca kendi şehirlerini
+    if user.is_authenticated:
+        if user.is_superuser:
+            cities = City.objects.all().order_by('-id')
+        else:
+            cities = City.objects.filter(user=user).order_by('-id')
         
-    
-    
+        # Şehirlerin hava durumu verilerini alıp listeye ekleme
+        for city in cities:
+            data = get_weather_data(city.name, API_KEY)
+            if data:
+                data['city'] = city
+                city_data.append(data)
+
+    # Context ve render işlemi
     context = {
         'city_data': city_data,
-        'profile': profile, #! profile_pic. için
+        'profile': profile,
     }
-
     return render(request, 'weatherapp/index.html', context)
 
+# Şehir silme işlemi
 def delete_city(request, id):
-    city = get_object_or_404(City, id=id)
+    city = get_object_or_404(City, id=id, user=request.user)  # Sadece bu kullanıcının şehirlerini silme
     city.delete()
-    messages.warning(request, 'City deleted.')
+    messages.warning(request, 'Şehir silindi.')
     return redirect('weatherapp:home')
