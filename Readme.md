@@ -102,7 +102,7 @@ API_KEY =123456789abcdefg...
 ## Acknowledgements
 - [Bootstrap5](https://getbootstrap.com/) - Projede kullanılan CSS framework'ü.
 - [crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Projede kullanılan formların CSS framework'ü.
-- [API's](https://openweathermap.org/) - API's.
+- [openweathermap API's](https://openweathermap.org/) - API's.
 
 ## Contact
 
