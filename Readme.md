@@ -31,12 +31,8 @@
 <!-- OVERVIEW -->
 
 ## Overview
-- Todo App Authenticate
-![screenshot](project_screenshot/Todo_App_Temp-1.gif)
-
----
-- Todo App
-![screenshot](project_screenshot/Todo_App_Temp-2.gif)
+- Weather App
+![screenshot](project_screenshot/Weather_App_Temp.gif)
 
 ---
 
