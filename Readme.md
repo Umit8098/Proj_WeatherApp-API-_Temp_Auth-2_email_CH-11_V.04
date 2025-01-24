@@ -100,8 +100,8 @@ API_KEY =123456789abcdefg...
 - Django Framework şablon yapısıyla hazırlanmış, https://openweathermap.org/ API'lerini kullanan Fullstack bir hava durumu uygulamasıdır.
 
 ## Acknowledgements
-- [Bootstrap5](https://getbootstrap.com/) - Projede kullanılan CSS framework'ü.
-- [crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Projede kullanılan formların CSS framework'ü.
+- [Bootstrap5](https://getbootstrap.com/) - CSS framework
+- [crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) - form CSS framework
 - [openweathermap API's](https://openweathermap.org/) - API's.
 
 ## Contact
