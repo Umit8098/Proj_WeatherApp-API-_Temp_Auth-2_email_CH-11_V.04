@@ -19,11 +19,11 @@
 
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
-  - [Kullanıcı Kayıt Olma](#kullanıcı-kayıt-olma)
-  - [Kullanıcı Login ve Hava Durumu Sorgulama](#kullanıcı-login-ve-hava-durumu-sorgulama)
+  - [User Registration](#user-registration)
+  - [User Login and Weather Inquiry](#user-login-and-weather-inquiry)
 - [Built With](#built-with)
 - [How To Use](#how-to-use)
-  - [Test Kullanıcı Bilgileri](#test-kullanıcı-bilgileri)
+  - [Test User Information](#test-user-information)
 - [About This Project](#about-this-project)
 - [Key Features](#key-features)
 - [Contact](#contact)
@@ -32,16 +32,16 @@
 
 ## Overview
 
-### Kullanıcı Kayıt Olma
+### User Registration
 <!-- ![screenshot](project_screenshot/weather_app_register.png) -->
-<img src="project_screenshot/weather_app_register.png" alt="Kullanıcı Kayıt Olma" width="400"/>
+<img src="project_screenshot/weather_app_register.png" alt="User Registration" width="400"/>
 ➡ Kullanıcıların hava durumu uygulamasına kayıt olma ekranı.
 
 ---
 
-### Kullanıcı Login ve Hava Durumu Sorgulama
+### User Login and Weather Inquiry
 <!-- ![screenshot](project_screenshot/Weather_App_Temp.gif) -->
-<img src="project_screenshot/Weather_App_Temp.gif" alt="Kullanıcı Login" width="400"/>
+<img src="project_screenshot/Weather_App_Temp.gif" alt="User Login and Weather Inquiry" width="400"/>
 ➡ Kullanıcıların giriş yapıp şehir adı girerek güncel hava durumu bilgisine ulaştığı ekran.
 
 ---
@@ -105,11 +105,11 @@ API_KEY = {OpenWeather API Anahtarınız}
     $ python manage.py runserver
 ```
 
-### Test Kullanıcı Bilgileri
+### Test User Information
 
 Canlı demo için aşağıdaki test kullanıcı bilgilerini kullanabilirsiniz:
-- **Kullanıcı Adı**: testuser
-- **Şifre**: testpassword123
+- **User name**: testuser
+- **Password**: testpassword123
 - **e-mail**: testuser@gmail.com
 Bu kullanıcı yalnızca hava durumu sorgulama ve profil güncelleme işlemlerini gerçekleştirebilir.
 
