@@ -55,10 +55,10 @@
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 This project was developed using the following tools and libraries:
 
-- [Django Templates](https://docs.djangoproject.com/en/5.1/topics/templates/): Dinamik web sayfaları oluşturmak için.
-- [Bootstrap5](https://getbootstrap.com/docs/5.0/getting-started/introduction/): Duyarlı ve modern bir kullanıcı arayüzü sağlamak için.
-- [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/): Formları kolayca stilize etmek için.
-- [dj-rest-auth](https://dj-rest-auth.readthedocs.io/en/latest/): Kullanıcı doğrulama ve yetkilendirme modülü.
+- [Django Templates](https://docs.djangoproject.com/en/5.1/topics/templates/): To create dynamic web pages.
+- [Bootstrap5](https://getbootstrap.com/docs/5.0/getting-started/introduction/): To provide a responsive and modern user interface.
+- [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/): To easily stylize forms.
+- [dj-rest-auth](https://dj-rest-auth.readthedocs.io/en/latest/): User authentication and authorization module.
 
 ## How To Use
 
@@ -132,8 +132,6 @@ Kullanıcılar:
 - Şehir adı girerek hava durumu bilgisine erişebilir.
 - Kayıt olup giriş yaparak hava durumu geçmişlerini görüntüleyebilir.
 - Profil bilgilerini düzenleyebilir ve şifre değiştirme işlemleri yapabilir.
-
-
 
 
 ## Key Features
