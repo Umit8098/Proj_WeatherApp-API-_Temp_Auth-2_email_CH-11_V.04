@@ -2,8 +2,8 @@
 
 <h1 align="center">Project_Django_Template_Weather_App</h1>
 
-<p align="center">☁️ A weather app built with Django and using OpenWeather APIs
- ☁️</p>
+<p align="center"><strong>☁️ A weather app built with Django and using OpenWeather APIs
+ ☁️</strong></p>
 <p align="center">☁️ Django ile oluşturulmuş ve OpenWeather API'lerini kullanan bir hava durumu uygulaması ☁️</p>
 
 
