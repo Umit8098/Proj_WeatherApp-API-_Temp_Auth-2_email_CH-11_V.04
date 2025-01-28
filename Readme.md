@@ -6,13 +6,8 @@
 <div align="center">
   <h3>
     <a href="https://umit8108.pythonanywhere.com/">
-      Demo
+      Canlı Demo
     </a>
-     | 
-    <a href="https://umit8108.pythonanywhere.com/">
-      Project
-    </a>
- 
   </h3>
 </div>
 
@@ -22,6 +17,8 @@
 
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
+  - [Kullanıcı Kayıt Olma](#kullanıcı-kayıt-olma)
+  - [Kullanıcı Login](#kullanıcı-login)
 - [Built With](#built-with)
 - [How To Use](#how-to-use)
 - [About This Project](#about-this-project)
@@ -31,10 +28,22 @@
 <!-- OVERVIEW -->
 
 ## Overview
-- Weather App
-![screenshot](project_screenshot/Weather_App_Temp.gif)
+
+### Kullanıcı Kayıt Olma
+<!-- ![screenshot](project_screenshot/weather_app_register.png) -->
+<img src="project_screenshot/weather_app_register.png" alt="Kullanıcı Kayıt Olma" width="400"/>
+➡ Kullanıcıların uygulamaya kayıt olma sayfası.
 
 ---
+
+### Kullanıcı Login
+<!-- ![screenshot](project_screenshot/Weather_App_Temp.gif) -->
+<img src="project_screenshot/Weather_App_Temp.gif" alt="Kullanıcı Login" width="400"/>
+➡ Kullanıcıların giriş yaparak... sağlayabileceği ekran.
+
+---
+
+
 
 ## Built With
 
