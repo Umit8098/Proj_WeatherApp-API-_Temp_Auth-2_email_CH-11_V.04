@@ -8,7 +8,7 @@
 <div align="center">
   <h3>
     <a href="https://umit8108.pythonanywhere.com/">
-      Canlı Demo
+      Live Demo
     </a>
   </h3>
 </div>
