@@ -2,6 +2,8 @@
 
 <h1 align="center">Project_Django_Template_Weather_App</h1>
 
+<p align="center">☁️ A weather app built with Django and using OpenWeather APIs
+ ☁️</p>
 <p align="center">☁️ Django ile oluşturulmuş ve OpenWeather API'lerini kullanan bir hava durumu uygulaması ☁️</p>
 
 
@@ -35,14 +37,14 @@
 ### User Registration
 <!-- ![screenshot](project_screenshot/weather_app_register.png) -->
 <img src="project_screenshot/weather_app_register.png" alt="User Registration" width="400"/>
-➡ Kullanıcıların hava durumu uygulamasına kayıt olma ekranı.
+➡ Users' registration screen to the weather application.
 
 ---
 
 ### User Login and Weather Inquiry
 <!-- ![screenshot](project_screenshot/Weather_App_Temp.gif) -->
 <img src="project_screenshot/Weather_App_Temp.gif" alt="User Login and Weather Inquiry" width="400"/>
-➡ Kullanıcıların giriş yapıp şehir adı girerek güncel hava durumu bilgisine ulaştığı ekran.
+➡ The screen where users can access current weather information by logging in and entering the city name.
 
 ---
 
@@ -51,7 +53,7 @@
 ## Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
-Bu proje aşağıdaki araçlar ve kütüphaneler kullanılarak geliştirilmiştir:
+This project was developed using the following tools and libraries:
 
 - [Django Templates](https://docs.djangoproject.com/en/5.1/topics/templates/): Dinamik web sayfaları oluşturmak için.
 - [Bootstrap5](https://getbootstrap.com/docs/5.0/getting-started/introduction/): Duyarlı ve modern bir kullanıcı arayüzü sağlamak için.
@@ -107,11 +109,11 @@ API_KEY = {OpenWeather API Anahtarınız}
 
 ### Test User Information
 
-Canlı demo için aşağıdaki test kullanıcı bilgilerini kullanabilirsiniz:
+For the live demo, you can use the following test user information:
 - **User name**: testuser
 - **Password**: testpassword123
 - **e-mail**: testuser@gmail.com
-Bu kullanıcı yalnızca hava durumu sorgulama ve profil güncelleme işlemlerini gerçekleştirebilir.
+This user can only perform weather inquiries and profile updates.
 
 ## About This Project
 
@@ -136,7 +138,15 @@ Kullanıcılar:
 
 ## Key Features
 
-- **Şehir Bazlı Hava Durumu Bilgisi**: Kullanıcılar şehir adı girerek güncel hava durumu bilgisine erişebilir.
+- **City Based Weather Information**: Users can access current weather information by entering the city name.
+- **API Support**: Accurate and up-to-date weather data is provided via OpenWeather API.
+- **User Management**: Registration, login, profile editing and password change operations.
+- **Fast and Responsive Interface**: Modern and user-friendly interface with Bootstrap.
+- **User Notifications**: After successful transactions, the user is given feedback via a screen message.
+
+---
+
+- **Şehir Bazlı Hava Durumu Bilgileri**: Kullanıcılar şehir adını girerek güncel hava durumu bilgilerine erişebilirler.
 - **API Desteği**: OpenWeather API ile doğru ve güncel hava durumu verileri sağlanır.
 - **Kullanıcı Yönetimi**: Kayıt, giriş, profil düzenleme ve şifre değiştirme işlemleri.
 - **Hızlı ve Duyarlı Arayüz**: Bootstrap ile modern ve kullanıcı dostu arayüz.
