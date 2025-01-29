@@ -4,6 +4,9 @@
 
 <p align="center"><strong>☁️ A weather app built with Django and using OpenWeather APIs
  ☁️</strong></p>
+
+---
+
 <p align="center">☁️ Django ile oluşturulmuş ve OpenWeather API'lerini kullanan bir hava durumu uygulaması ☁️</p>
 
 
@@ -124,7 +127,7 @@ Users:
 - Can view weather histories by registering and logging in.
 - Can edit profile information and change passwords.
 
-<hr>
+---
 
 Bu proje, kullanıcıların şehir bazlı güncel hava durumu bilgilerine kolayca erişebilmesi amacıyla geliştirilmiştir. Django Template yapısı ile frontend ve backend desteği sunmaktadır. OpenWeather API ile doğru ve güncel veri sağlanmaktadır.
 
