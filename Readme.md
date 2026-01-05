@@ -17,17 +17,23 @@ A full-stack weather application built with Django Templates and OpenWeather API
 <div align="center">
   <h3>
     <a href="https://umit8108.pythonanywhere.com/">
-      Live Demo
+      🖥️ Live Demo
     </a>
       | 
     <a href="https://github.com/Umit8098/Proj_WeatherApp-API-_Temp_Auth-2_email_CH-11_V.04.git">
-      Project
+      📂 Project
     </a>
 
   </h3>
 </div>
 
-<!-- TABLE OF CONTENTS -->
+---
+
+ - User Login and Weather Inquiry
+<!-- ![screenshot](project_screenshot/Weather_App_Temp.gif) -->
+![User Login and Weather Inquiry](project_screenshot/Weather_App_Temp.gif)
+ - The screen where users can access current weather information by logging in and entering the city name.
+
 
 ## Navigation
 
@@ -49,13 +55,6 @@ A full-stack weather application built with Django Templates and OpenWeather API
 <!-- ![screenshot](project_screenshot/weather_app_register.png) -->
 <img src="project_screenshot/weather_app_register.png" alt="User Registration" width="400"/>
 ➡ Users' registration screen to the weather application.
-
----
-
-### User Login and Weather Inquiry
-<!-- ![screenshot](project_screenshot/Weather_App_Temp.gif) -->
-<img src="project_screenshot/Weather_App_Temp.gif" alt="User Login and Weather Inquiry" width="400"/>
-➡ The screen where users can access current weather information by logging in and entering the city name.
 
 
 ## Built With
