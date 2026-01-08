@@ -21,7 +21,7 @@ A full-stack weather application built with Django Templates and OpenWeather API
     </a>
       | 
     <a href="https://github.com/Umit8098/Proj_WeatherApp-API-_Temp_Auth-2_email_CH-11_V.04.git">
-      📂 Project
+      📂 Repository
     </a>
 
   </h3>
